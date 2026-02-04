@@ -36,6 +36,8 @@ export default router;
  *             properties:
  *               name:
  *                 type: string
+ *               quantity:
+ *                 type: number
  *               costPrice:
  *                 type: number
  *               sellingPrice:
@@ -43,39 +45,35 @@ export default router;
  *     responses:
  *       201:
  *         description: Product created
- */
-
-/**
- * @swagger
- * /api/products:
- * get:
- * summary: Retrieve a list of all products
- * tags: [Products]
- * security:
- * - bearerAuth: []
- * responses:
- * 200:
- * description: A list of products
- * content:
- * application/json:
- * schema:
- * type: array
- * items:
- * type: object
- * properties:
- * _id:
- * type: string
- * name:
- * type: string
- * costPrice:
- * type: number
- * sellingPrice:
- * type: number
- * createdAt:
- * type: string
- * format: date-time
- * 401:
- * description: Not authorized, token failed
- * 500:
- * description: Internal server error
+ *
+ *   get:
+ *     summary: Retrieve a list of all products
+ *     tags: [Products]
+ *     security:
+ *       - bearerAuth: []
+ *     responses:
+ *       200:
+ *         description: A list of products
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 type: object
+ *                 properties:
+ *                   _id:
+ *                     type: string
+ *                   name:
+ *                     type: string
+ *                   costPrice:
+ *                     type: number
+ *                   sellingPrice:
+ *                     type: number
+ *                   createdAt:
+ *                     type: string
+ *                     format: date-time
+ *       401:
+ *         description: Not authorized, token failed
+ *       500:
+ *         description: Internal server error
  */

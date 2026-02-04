@@ -3,7 +3,7 @@ import Product from "../models/Product.js";
 
 export const createProduct = async (req, res) => {
     try{
-        const {name, costPrice, sellingPrice}=req.body;
+        const {name, quantity, costPrice, sellingPrice}=req.body;
 
         const productExists = await Product.findOne({name});
         if(productExists){
@@ -12,6 +12,7 @@ export const createProduct = async (req, res) => {
 
         const product = await Product.create({
             name,
+            quantity,
             costPrice,
             sellingPrice,
         });
