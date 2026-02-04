@@ -1,0 +1,21 @@
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+}
+
+.custom-table th,
+.custom-table td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+}
+
+.custom-table th {
+  background: #f9f9f9;
+  font-weight: 600;
+}
+
+.custom-table tr:hover {
+  background: #fafafa;
+}

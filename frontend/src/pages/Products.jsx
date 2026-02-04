@@ -30,7 +30,7 @@ export default function Products() {
     <div>
       <div className="page-header">
         <h1 className="page-title">Product Management</h1>
-        <button className="pimary-btn">Add Product</button>
+        <button className="primary-btn">Add Product</button>
       </div>
 
       <Table columns={columns} data= {tableData}/>
