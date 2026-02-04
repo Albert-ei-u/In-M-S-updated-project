@@ -17,6 +17,15 @@ export default function Products() {
         console.error("Failed to Fetch products", err);
       });
   }, []);
+
+  const tableData = products.map(product => ({
+    name: product.name,
+    category: product.category,
+    price: product.price,
+    stock: product.stock,
+    actions: "Edit | Delete",
+  }));
+  
   return (
     <div>
       <div className="page-header">
