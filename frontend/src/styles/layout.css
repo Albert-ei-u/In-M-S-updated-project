@@ -1,0 +1,27 @@
+.app {
+    display: flex;
+    min-height: 100vh;
+}
+
+.content {
+    flex: 1;
+    padding: 24px;
+}
+
+.sidebar {
+    width: 220px;
+    background: #ffffff;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+}
+
+.sidebar a {
+    display: block;
+    margin: 12px 0;
+    text-decoration: none;
+    color: #444;
+}
+
+.sidebar a:hover {
+    color: #6a5acd;
+}
