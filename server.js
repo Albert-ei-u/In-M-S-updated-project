@@ -8,6 +8,7 @@ import authRoutes from "./routes/authRoutes.js";
 import purchaseRoutes from "./routes/purchaseRoutes.js";
 import saleRoutes from "./routes/saleRoutes.js";
 import reportRoutes from "./routes/reportRoutes.js";
+import productRoutes from "./routes/productRoutes.js";
 import protect from "./middlewares/authMiddleware.js";
 
 dotenv.config();
@@ -22,7 +23,7 @@ app.use("/api/auth", authRoutes);
 app.use("/api/purchases", purchaseRoutes);
 app.use("/api/sales", saleRoutes);
 app.use("/api/reports", reportRoutes);
-
+app.use("/api/products", productRoutes);
 //swagger
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
