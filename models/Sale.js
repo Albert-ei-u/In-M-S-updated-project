@@ -5,11 +5,11 @@ const saleSchema = new mongoose.Schema(
     product: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Product",
-      required: true
+      required: true,
     },
     quantity: {
       type: Number,
-      required: true
+      required: true,
     },
     totalRevenue: {
       type: Number,

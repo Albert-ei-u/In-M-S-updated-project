@@ -63,8 +63,7 @@ export const loginUser= async (req, res)=>{
                 role: user.role
             }
         });
-    }
-    catch(error){
+    }catch(error){
         res.status(500).json({message: error.message})
     }
 };

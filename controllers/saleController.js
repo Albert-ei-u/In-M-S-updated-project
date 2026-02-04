@@ -35,6 +35,7 @@ export const createSale = async (req, res) => {
       sale,
       remainingStock: product.quantity
     });
+    
   } catch (error) {
     res.status(500).json({ message: error.message });
   }

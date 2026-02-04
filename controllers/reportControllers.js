@@ -19,6 +19,7 @@ export const getProfitReport = async (req, res) => {
             totalProfit,
             salesCount: sales.length
         });
+        
     }
     catch(error){
         res.status(500).json({ message: error.message });
