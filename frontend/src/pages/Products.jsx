@@ -6,7 +6,7 @@ import "../styles/table.css";
 export default function Products() {
   const [products, setProducts] = useState([]);
 
-  const columns = ["Name", "Category", "Price", "Stock", "Actions"];
+  const columns = ["Product Name", "Quantity", "Price", "Actions"];
 
   useEffect(() => {
     api.get("/products")
@@ -20,9 +20,8 @@ export default function Products() {
 
   const tableData = products.map(product => ({
     name: product.name,
-    category: product.category,
+    quantity: product.quantity,
     price: product.price,
-    stock: product.stock,
     actions: "Edit | Delete",
   }));
   
