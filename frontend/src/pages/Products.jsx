@@ -1,38 +1,16 @@
-import { use, useEffect, useState } from "react";
-import Table from "../components/Table";
-import api from "../api/axios";
-import "../styles/table.css";
+import { useEffect, useState } from "react";
+import { fetchProducts } from "../api/productApi";
 
-export default function Products() {
-  const [products, setProducts] = useState([]);
-
-  const columns = ["Product Name", "Quantity", "Price", "Actions"];
+export default function Products () {
+  const [products, setProducts] =  useState([]);
+  const [ loading, setLoading] = useState(true);
 
   useEffect(() => {
-    api.get("/products")
-      .then(res => {
-        setProducts(res.data);
-      })
-      .catch(err => {
-        console.error("Failed to Fetch products", err);
-      });
+    loadProducts();
   }, []);
 
-  const tableData = products.map(product => ({
-    name: product.name,
-    quantity: product.quantity,
-    price: product.price,
-    actions: "Edit | Delete",
-  }));
-  
-  return (
-    <div>
-      <div className="page-header">
-        <h1 className="page-title">Product Management</h1>
-        <button className="primary-btn">Add Product</button>
-      </div>
-
-      <Table columns={columns} data= {tableData}/>
-    </div>
-  );
+  const loadProducts= async () => {
+    const res = await fetchProducts();
+    setProducts(res.data);
+  }
 }
