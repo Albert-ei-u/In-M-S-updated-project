@@ -10,7 +10,15 @@ export default function Products () {
   }, []);
 
   const loadProducts= async () => {
-    const res = await fetchProducts();
-    setProducts(res.data);
+    try {
+      const res = await fetchProducts();
+      setProducts(res.data);
+    }
+    catch (err) {
+      console.error(err);
+      alert("Failed to Load Productsd");
+    } finally{
+      setLoading(false);
+    }
   }
 }
