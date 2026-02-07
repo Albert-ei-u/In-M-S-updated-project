@@ -10,9 +10,9 @@ export default function Dashboard() {
         <StatCard title="Total Sales" value="$12,500" />
         <StatCard title="Total Purchases" value="$8,300"/>
         <div className="charts-grid">
-            <div className="chart-box">Product Trends (Chart)</div>
-            <div className="chart-box">Sales Growth (Chart)</div>
-            <div className="chart-box">Purchase Distribution (Chart)</div>
+          <div className="chart-box">Product Trends (Chart)</div>
+          <div className="chart-box">Sales Growth (Chart)</div>
+          <div className="chart-box">Purchase Distribution (Chart)</div>
         </div>
 
       </div>

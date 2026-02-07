@@ -1,11 +1,12 @@
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
-import Login from "./pages/Login";
 import Products from "./pages/Products";
 import Sales from "./pages/Sales";
 import Purchases from "./pages/Purchases";
 import Profile from "./pages/Profile";
 import Sidebar from "./components/Sidebar";
+import Register from "./pages/Register";
+import Login from "./pages/Login";
 import "./styles/layout.css"
 
 function App(){
@@ -15,6 +16,7 @@ function App(){
             <Sidebar/>
             <div className="content">
                 <Routes>
+                    <Route path="/register" element={<Register/>}/>
                     <Route path="/login" element={<Login />}/>
                     <Route path="/dashboard" element={<Dashboard />}/>
                     <Route path="/products" element={<Products />}/>

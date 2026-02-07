@@ -1,6 +1,6 @@
 import api from "./axios";
 
-export const fetchProducts = () => api.get("/products/products");
+export const fetchProducts = () => api.get("/products/");
 
 export const crateProduct = (data) => 
     api.post("/products",data);

@@ -1,15 +1,15 @@
 import { useState } from "react";
-import { loginUser } from "../api/authapi.js";
+import { registerUser } from "../api/authapi.js";
 import { useNavigate } from "react-router-dom";
 import "../styles/auth.css";
 
-export default function Login() {
+export default function Register() {
   const [form, setForm] = useState({
+    name: "",
     email: "",
     password: "",
   });
 
-  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -18,23 +18,28 @@ export default function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true);
 
     try {
-      const res = await loginUser(form);
-      localStorage.setItem("token", res.data.token);
-      navigate("/products");
+      await registerUser(form);
+      alert("Account created successfully");
+      navigate("/");
     } catch (err) {
-      alert(err.response?.data?.message || "Login failed");
-    } finally {
-      setLoading(false);
+      alert(err.response?.data?.message || "Registration failed");
     }
   };
 
   return (
     <div className="auth-container">
       <form className="auth-card" onSubmit={handleSubmit}>
-        <h2>Welcome to Inventory Manager</h2>
+        <h2>Create Account</h2>
+
+        <label>Name</label>
+        <input
+          name="name"
+          value={form.name}
+          onChange={handleChange}
+          required
+        />
 
         <label>Email</label>
         <input
@@ -54,14 +59,7 @@ export default function Login() {
           required
         />
 
-        <button disabled={loading}>
-          {loading ? "Logging in..." : "Login"}
-        </button>
-
-        <div className="auth-links">
-          <span>Forgot Password?</span>
-          <span onClick={() => navigate("/register")}>Sign Up</span>
-        </div>
+        <button>Create Account</button>
       </form>
     </div>
   );
