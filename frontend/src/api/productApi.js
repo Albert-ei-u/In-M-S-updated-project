@@ -1,8 +1,8 @@
 import api from "./axios";
 
-export const fetchProducts = () => api.get("/products/");
+export const fetchProducts = () => api.get("/products");
 
-export const crateProduct = (data) => 
+export const createProduct = (data) => 
     api.post("/products",data);
 
 export const updateProduct = (id, data) =>

@@ -1,4 +1,4 @@
-import {BrowserRouter, Routes, Route} from "react-router-dom";
+import {Routes, Route, useLocation, Navigate} from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
 import Products from "./pages/Products";
 import Sales from "./pages/Sales";
@@ -10,25 +10,26 @@ import Login from "./pages/Login";
 import "./styles/layout.css"
 
 function App(){
-    return (
-        <BrowserRouter>
-          <div className="app">
-            <Sidebar/>
-            <div className="content">
-                <Routes>
-                    <Route path="/register" element={<Register/>}/>
-                    <Route path="/login" element={<Login />}/>
-                    <Route path="/dashboard" element={<Dashboard />}/>
-                    <Route path="/products" element={<Products />}/>
-                    <Route path="/sales" element={<Sales />}/>
-                    <Route path="/purchases" element={<Purchases />}/>
-                    <Route path="/profile" element={<Profile />}/>
-                </Routes>
-            </div>
-          </div>
-            
-        </BrowserRouter>
-    );
+  const location = useLocation();
+  const hideSidebar = location.pathname === "/login" || location.pathname === "/register";
+
+  return (
+      <div className="app">
+      {!hideSidebar && <Sidebar />}
+      <div className="content">
+        <Routes>
+          <Route path="/" element={<Navigate to="/login" replace/>} />
+          <Route path="/register" element={<Register/>}/>
+          <Route path="/login" element={<Login />}/>
+          <Route path="/dashboard" element={<Dashboard />}/>
+          <Route path="/products" element={<Products />}/>
+          <Route path="/sales" element={<Sales />}/>
+          <Route path="/purchases" element={<Purchases />}/>
+          <Route path="/profile" element={<Profile />}/>
+        </Routes>
+      </div>
+      </div>
+  );
 }
 
 export default App;

@@ -43,11 +43,12 @@ export const updateProduct = async (req, res) => {
         const updatedProduct = await Product.findByIdAndUpdate(
             id,
             req.body,
-            { new:true, runvalidators: true}
+            { new:true, runValidators: true}
         );
         if (!updatedProduct) {
             return res.status(404).json({ message: "Product not found"});
         }
+        res.json(updatedProduct);
     }
     catch(error){
         res.status(500).json({message: error.message});

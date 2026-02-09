@@ -15,8 +15,7 @@ export default function Products () {
       setProducts(res.data);
     }
     catch (err) {
-      console.error(err);
-      alert("Failed to Load Productsd");
+      alert("Failed to Load Products");
     } finally{
       setLoading(false);
     }
