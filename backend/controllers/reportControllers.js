@@ -15,7 +15,6 @@ export const getProfitReport = async (req, res) => {
         const totalProfit = sales.reduce((sum,sale) => sum + sale.profit, 0);
 
         res.json({
-            
             period,
             totalProfit,
             salesCount: sales.length
