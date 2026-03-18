@@ -43,6 +43,7 @@ export default function Products() {
       alert(err.response?.data?.message || "Operation failed");
     }
   };
+  
   const handleEdit = (product) => {
     setEditingProduct(product);
     setFormData({
