@@ -14,9 +14,9 @@ function App(){
   const hideSidebar = location.pathname === "/login" || location.pathname === "/register";
 
   return (
-    <div className="min-h-screen bg-gray-50">
+      <div className="app">
       {!hideSidebar && <Sidebar />}
-      <div className={`${!hideSidebar ? 'ml-64' : ''} transition-all duration-300`}>
+      <div className="content">
         <Routes>
           <Route path="/" element={<Navigate to="/login" replace/>} />
           <Route path="/register" element={<Register/>}/>
@@ -28,7 +28,7 @@ function App(){
           <Route path="/profile" element={<Profile />}/>
         </Routes>
       </div>
-    </div>
+      </div>
   );
 }
 

@@ -42,7 +42,7 @@ export default function Sidebar() {
                 <span className="text-xl">{item.icon}</span>
                 <span className="font-medium">{item.label}</span>
               </Link>
-            </li>
+            </li> 
           ))}
         </ul>
       </nav>
