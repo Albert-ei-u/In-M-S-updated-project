@@ -18,7 +18,7 @@ export const createSale = async (req, res) => {
     const totalCost = quantity * product.costPrice;
     const profit = totalRevenue - totalCost;
 
-    // Reduce stock
+    //reduction
     product.quantity -= quantity;
     await product.save();
 
