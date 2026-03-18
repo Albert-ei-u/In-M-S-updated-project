@@ -32,7 +32,6 @@ export default function Products() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      
       if (editingProduct) {
         await updateProduct(editingProduct._id, formData);
       } else {
@@ -44,7 +43,7 @@ export default function Products() {
       alert(err.response?.data?.message || "Operation failed");
     }
   };
-
+  
   const handleEdit = (product) => {
     setEditingProduct(product);
     setFormData({
