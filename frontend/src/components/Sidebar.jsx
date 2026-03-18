@@ -48,6 +48,7 @@ export default function Sidebar() {
       </nav>
 
       {/* User Section */}
+      
       <div className="absolute bottom-0 left-0 right-0 p-4 border-t border-gray-200">
         <div className="flex items-center space-x-3 px-4 py-3">
           <div className="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center">
