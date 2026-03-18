@@ -22,7 +22,7 @@ export const createSale = async (req, res) => {
     product.quantity -= quantity;
     await product.save();
 
-    // Save sale
+    // Save sale 
     const sale = await Sale.create({
       product: productId,
       quantity,
